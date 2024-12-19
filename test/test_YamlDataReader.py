@@ -46,7 +46,7 @@ class TestYamlDataReader:
     def test_read_yaml_file(
             self, yaml_filepath_and_data: tuple[str, DataType]
     ) -> None:
-        # Создадим экземляр YamlDataReader и его методом read прочтём тестовые данные
+        # Создадим экземляр YamlDataReader и его методом read прочтём данные
         file_content = YamlDataReader().read(yaml_filepath_and_data[0])
         # Проверяем, соответствуют ли они ожидаемым
         assert file_content == yaml_filepath_and_data[1]
