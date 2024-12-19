@@ -1,6 +1,6 @@
 # Тестирование вспомогательных функций в файле main.py
 # -*- coding: utf-8 -*-
-from src.main import get_path_from_arguments
+from main import get_path_from_arguments
 import pytest
 
 
