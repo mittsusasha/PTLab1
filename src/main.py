@@ -5,7 +5,7 @@ import sys
 
 from CalcRating import CalcRating
 from YamlDataReader import YamlDataReader
-# from TextDataReader import TextDataReader     # Больше не нужно, мы перешли на YAML!
+# from TextDataReader import TextDataReader     # Больше не нужно
 
 
 def get_path_from_arguments(args) -> str:
