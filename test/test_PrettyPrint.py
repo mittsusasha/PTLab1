@@ -10,7 +10,7 @@ class TestPrettyPrint:
     # Фикстура для предоставления данных о студентах
     @pytest.fixture()
     def students_data(self) -> dict:
-        # Словарь, в котором каждому студенту сопоставлены его предметы и оценки
+        # Словарь, в котором студентам сопоставлены их предметы и оценки
         return {
             "Тестов Тест Тестович": [
                 ("математика", 91), ("физика", 90), ("русский язык", 80)
@@ -31,11 +31,11 @@ class TestPrettyPrint:
 
     # Тест для метода print_students
     def test_print_students(self, students_data):
-        # Перенаправляем стандартный вывод в объект StringIO, чтобы перехватить вывод
+        # Перенаправляем стандартный вывод в StringIO, чтобы перехватить вывод
         captured_output = StringIO()
         sys.stdout = captured_output
 
-        # Вызываем метод print_students, который будет выводить информацию на экран
+        # Вызываем метод print_students, он выводит информацию на экран
         PrettyPrint.print_students(students_data)
 
         # Возвращаем стандартный вывод в исходное состояние
@@ -63,13 +63,13 @@ class TestPrettyPrint:
         captured_output = StringIO()
         sys.stdout = captured_output
 
-        # Вызываем метод print_rating, который будет выводить рейтинг студентов
+        # Вызываем метод print_rating, он выводит рейтинг студентов
         PrettyPrint.print_rating(rating_data)
 
         # Возвращаем стандартный вывод в исходное состояние
         sys.stdout = sys.__stdout__
 
-        # Ожидаемый вывод с рейтингами студентов, отформатированными до 2 знаков после запятой
+        # Ожидаемый вывод с рейтингами студентов, до 2 знаков после запятой
         expected_output = (
             "Рейтинг студентов:\n\n"
             "Тестов Тест Тестович : 87.00\n"
