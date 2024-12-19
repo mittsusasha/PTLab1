@@ -6,6 +6,7 @@ import sys
 from CalcRating import CalcRating
 from YamlDataReader import YamlDataReader
 # from TextDataReader import TextDataReader     # Больше не нужно
+from CalcExcellent import CalcExcellent
 from PrettyPrint import PrettyPrint  # Для читаемости вывода
 
 
@@ -28,6 +29,15 @@ def main():
 
     rating = CalcRating(students).calc()
     PrettyPrint.print_rating(rating)
+
+    # Создаем объект для подсчета студентов-отличников
+    excellent_calc = CalcExcellent(students)
+
+    # Подсчитываем количество студентов-отличников
+    excellent_calc.calc()
+
+    # Выводим информацию о отличниках
+    excellent_calc.print_excellent()
 
 
 if __name__ == "__main__":
