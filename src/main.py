@@ -6,6 +6,7 @@ import sys
 from CalcRating import CalcRating
 from YamlDataReader import YamlDataReader
 # from TextDataReader import TextDataReader     # Больше не нужно
+from PrettyPrint import PrettyPrint  # Для читаемости вывода
 
 
 def get_path_from_arguments(args) -> str:
@@ -23,10 +24,10 @@ def main():
     # Раньше было reader = TextDataReader() — но теперь мы читаем YAML!
     reader = YamlDataReader()
     students = reader.read(path)
-    print("Students: ", students)
+    PrettyPrint.print_students(students)
 
     rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    PrettyPrint.print_rating(rating)
 
 
 if __name__ == "__main__":
