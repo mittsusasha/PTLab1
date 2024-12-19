@@ -1,8 +1,8 @@
 # Класс, с помощью которого осуществляется тестирование класса TextDataReader
 # -*- coding: utf-8 -*-
 import pytest
-from src.Types import DataType
-from src.TextDataReader import TextDataReader
+from Types import DataType
+from TextDataReader import TextDataReader
 
 
 class TestTextDataReader:
